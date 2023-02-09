@@ -7,21 +7,21 @@ import Topbar from "@/components/Topbar";
 
 function movies ({results}) {
   const {data:session} = useSession();
-return (
-  <>
-  {session && session.user ? (
-      <>
-      <Topbar/>
-      <Nav/>
-      <Results results={results}/>
-      </>
-    ) : (
-      <>
-      <Home/>
-      </>
-    )
-    }
-  </>
+  return (
+          <>
+          {session && session.user ? (
+            <>
+            <Topbar/>
+            <Nav/>
+            <Results results={results}/>
+            </>
+          ) : (
+            <>
+            <Home/>
+            </>
+          )
+          }
+        </>
     
 
 )
