@@ -7,25 +7,24 @@ import Topbar from "@/components/Topbar";
 
 function movies ({results}) {
   const {data:session} = useSession();
-  return (
-          <>
-          {session && session.user ? (
-            <>
-            <Topbar/>
-            <Nav/>
-            <Results results={results}/>
-            </>
-          ) : (
-            <>
-            <Home/>
-            </>
-          )
-          }
-        </>
-    
+  const router = useRouter();
+  if (session) {
+    return (
+      <>
+      <Topbar />
+      <Nav />
+      <Results results={results} />
+      </>
+      ) 
+    } else {
+      return (
+      <>
+        <Home />
+      </>
+    )}
 
-)
-  }
+}
+  
 
 export default movies;
 
