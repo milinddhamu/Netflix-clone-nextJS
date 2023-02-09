@@ -5,7 +5,7 @@ import { useSession, signOut } from "next-auth/react";
 import Home from ".";
 import Topbar from "@/components/Topbar";
 
-const movies = ({results}) => {
+function movies ({results}) {
   const {data:session} = useSession();
 return (
   <>
